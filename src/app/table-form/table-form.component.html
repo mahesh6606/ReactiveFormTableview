@@ -1,0 +1,30 @@
+<h2>Add Contents to Table</h2>
+
+<form [formGroup]="tableForm" (ngSubmit)="onSubmit()">
+  <label>
+    Name:
+    <input type="text" formControlName="name" />
+  </label>
+  <label>
+    Age:
+    <input type="number" formControlName="age" />
+  </label>
+  <label>
+    Email:
+    <input type="email" formControlName="email" />
+  </label>
+  <button type="submit">Add to Table</button>
+</form>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Email</th>
+  </tr>
+  <tr *ngFor="let row of tableData">
+    <td>{{ row.name }}</td>
+    <td>{{ row.age }}</td>
+    <td>{{ row.email }}</td>
+  </tr>
+</table>
